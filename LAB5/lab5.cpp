@@ -5,6 +5,9 @@ double solution(int n, double k) {
     if (n < 0) {
         return 0.0;
     }
+    else if(n==0){
+        return 1.0;
+    }
     double num = 1.0;
     for(int i = 0; i < n; i++) {
         num *= k;
@@ -13,6 +16,15 @@ double solution(int n, double k) {
     return num + solution(n - 1, k);
 }
 int main() {
-    cout << solution(5, 3) << endl;
+   int n;
+   double k;
+
+    cout << "Enter number n : ";
+    cin >> n;
+    cout << "Enter k: ";
+    cin >> k;
+
+    cout << "Result: " << solution(n, k) << endl;
+
     return 0;
 }
