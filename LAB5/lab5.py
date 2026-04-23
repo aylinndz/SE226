@@ -1,12 +1,10 @@
-def factorial(n):
-    if n == 0:
+def factorial(x):
+    if x == 0:
         return 1
-    return n * factorial(n-1)
+    return x * factorial(x-1)
 
-t = lambda l, i: (l ** i) / factorial(i)
+t = lambda l, i: (l ** (2*i)) / factorial(2*i)
 def exp_x(x, n):
-    if n == 0:
-        return 1
     total=0
 
     for i in range(n):
@@ -16,7 +14,9 @@ def exp_x(x, n):
 
 num =0
 def solution(n,k):
-    '''This function prints out the absolute value of the entered number'''
+    '''This function takes parameter n and k then assigns
+    the value to global variable y. It uses recursive logic
+    to sum k^n terms and returns nothing.'''
     global num
     if n >= 0:
         num += (k ** n)
