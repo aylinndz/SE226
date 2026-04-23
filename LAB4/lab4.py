@@ -35,6 +35,12 @@ for item in uniquePool:
         if item in items:
             foundCount += 1
 
+    itemCounts[item] = foundCount
+    if foundCount > 1:
+        commonItems.append(item)
+    else:
+        uniqueItems.append(item)
+
 print("most popular:")
 if itemCounts:
     maxCount = 0
@@ -45,7 +51,7 @@ if itemCounts:
     for (key, val) in itemCounts.items():
         if val == maxCount:
             print(key)
-itemCounts[item] = foundCount
+
 
 print("common item:")
 for item in commonItems:
